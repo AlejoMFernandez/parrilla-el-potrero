@@ -269,3 +269,32 @@ body.ficha-abierta .navapp{transform:translateY(140%);opacity:0}
 }
 .sec-parri .ticket__nom{line-height:1;margin-top:4px}
 @media (max-width:999px){.sec-parri__cuerpo{grid-template-columns:minmax(0,1fr)}.sec-parri .ticket{min-width:0;box-sizing:border-box}}
+
+/* ===== segunda revisión ===== */
+@media (min-width:1000px){.barra{background:#14100C}}
+.hb__foto img{object-position:50% 40%}
+.hb::before{background:linear-gradient(180deg,rgba(20,16,12,.72),rgba(20,16,12,.38) 40%,rgba(20,16,12,.5) 70%,rgba(20,16,12,.94))}
+.hb__foto{filter:sepia(.55) saturate(1.3) hue-rotate(-12deg)}
+.mas-carta{display:inline-block;margin-top:14px;font:700 15px/1 var(--txt);color:var(--ladrillo);text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:3px}
+.it__th.vacio{background:#E5D7BF url(../img/isotipo.svg) center/22px no-repeat;opacity:.9}
+@media (max-width:999px){
+  .sec-parri .ticket{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto auto auto}
+  .sec-parri .ticket__nom{font-size:23px;white-space:nowrap;grid-column:1;grid-row:1}
+  .sec-parri .ticket__precio{grid-column:2;grid-row:1;align-self:center}
+  .sec-parri .ticket__frase{grid-column:1/-1;grid-row:2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:16px;min-height:1.25em}
+  .sec-parri .ticket__nota{grid-row:3}
+  .sec-parri .ticket .ctas{grid-row:4}
+  .sec-parri .cuantos{width:100%;justify-content:space-between;gap:8px}
+  .mesa{width:136px}
+  .plato{width:24px;height:24px}
+  .cuantos__n{min-width:58px}
+}
+.hb::before{background:linear-gradient(180deg,rgba(20,16,12,.9) 0,rgba(20,16,12,.55) 16%,rgba(20,16,12,.4) 40%,rgba(20,16,12,.62) 70%,rgba(20,16,12,.95))}
+.hb__bar .logo small{color:#D8CBB9}
+.hb__ctas .lnk{background:rgba(20,16,12,.8);padding:0 12px;border-radius:4px 4px 0 0}
+/* tercera revisión */
+@media (min-width:1000px){
+  .it.con-foto .it__t b::after{display:none}
+  .it.tiene-foto .it__t b::after{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--brasa);margin-left:8px;vertical-align:3px}
+  .sec-parri .ticket__frase{min-height:2.5em}
+}

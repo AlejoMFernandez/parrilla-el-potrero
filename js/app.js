@@ -1,5 +1,5 @@
-import { montarParrilla } from './parrilla.js?v=2';
-import { letras, estadoAhora, intro } from './comun.js?v=2';
+import { montarParrilla } from './parrilla.js?v=4';
+import { letras, estadoAhora, intro } from './comun.js?v=4';
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -70,10 +70,11 @@ function pintarCarta() {
   tabs.innerHTML = grupos.map((g, i) => `<button class="tab${i === act ? ' on' : ''}" role="tab" aria-selected="${i === act}" data-i="${i}">${esc(g.c.nombre)}</button>`).join('');
   lista.innerHTML = grupos.map((g, i) => `<div class="cat${i === act ? ' on' : ''}" role="tabpanel" data-i="${i}">
     <div class="cat__cab"><h3>${esc(g.c.nombre)}</h3><span>${g.it.length} ${g.it.length === 1 ? 'opción' : 'opciones'}</span></div>
-    ${g.it.map(p => `<div class="it${p.foto ? ' con-foto' : ''}" data-foto="${esc(p.foto || '')}" data-nom="${esc(p.nombre)}">
-      ${p.foto ? `<div class="it__th"><img src="${esc(p.foto)}" alt="" width="56" height="56" loading="lazy"></div>` : ''}
+    ${g.it.slice(0, 6).map(p => `<div class="it con-foto${p.foto ? ' tiene-foto' : ''}" data-foto="${esc(p.foto || '')}" data-nom="${esc(p.nombre)}">
+      <div class="it__th${p.foto ? '' : ' vacio'}">${p.foto ? `<img src="${esc(p.foto)}" alt="" width="56" height="56" loading="lazy">` : ''}</div>
       <div class="it__t"><b>${esc(p.nombre)}${(p.etiquetas || []).includes('casa') ? '<span class="casa">de la casa</span>' : ''}</b>${p.descripcion ? `<span>${esc(p.descripcion)}</span>` : ''}</div>
       <div class="it__p${p.precio == null ? ' consultar' : ''}">${p.precio == null ? 'Consultar' : plata(p.precio)}</div>${qty(p)}</div>`).join('')}
+    ${g.it.length > 6 ? `<a class="mas-carta" href="carta/">+${g.it.length - 6} más en la carta completa →</a>` : ''}
   </div>`).join('');
   $$('.cat', lista).forEach((c, i) => { c.inert = i !== act; });
   flechas(grupos.length); fotoDe(grupos[act]?.it.find(p => p.foto));
@@ -100,7 +101,7 @@ function fotoDe(p) {
   fImg.classList.remove('ok'); fImg.onload = () => fImg.classList.add('ok'); fImg.src = p.foto; fTxt.textContent = p.nombre;
 }
 lista.addEventListener('pointerover', ev => {
-  if (celu()) return; const it = ev.target.closest('.it.con-foto'); if (!it) return;
+  if (celu()) return; const it = ev.target.closest('.it.tiene-foto'); if (!it) return;
   fotoDe({ foto: it.dataset.foto, nombre: it.dataset.nom });
 });
 // alto fijo: el de la sección más larga, así cambiar de pestaña no mueve nada
@@ -133,9 +134,9 @@ document.addEventListener('kit:carrito', contar);
 
 // ---------- popups del kit: esconder la barra inferior ----------
 new MutationObserver(() => {
-  const abierto = !!document.querySelector('.kit-modal.open, .kit-sheet.open, .kit-overlay.open, [data-kit-modal][open], dialog[open]');
+  const abierto = document.documentElement.classList.contains('kit-lock') || !!document.querySelector('.is-open');
   document.body.classList.toggle('pop-abierto', abierto);
-}).observe(document.body, { subtree: true, attributes: true, attributeFilter: ['class', 'open'], childList: true });
+}).observe(document.documentElement, { subtree: true, attributes: true, attributeFilter: ['class'] });
 
 // ---------- kit ----------
 const { initKit } = await import('../kit/kit.js?v=1');

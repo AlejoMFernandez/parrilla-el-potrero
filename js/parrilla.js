@@ -75,7 +75,7 @@ function acomodar(lista) {
   return out;
 }
 const PARRILLADAS = { 2: { kit: 'parrillada-2', nom: 'Parrillada para 2', precio: 59990, comen: 3 }, 3: { kit: 'parrillada-3', nom: 'Parrillada para 3', precio: 79990, comen: 4 }, 4: { kit: 'parrillada-4', nom: 'Parrillada para 4', precio: 99990, comen: 5 } };
-const FRASES = { 1: 'Sos uno: te sobra para mañana', 2: 'Para dos, y sobra', 3: 'Comen 3, lo dice la carta', 4: 'Comen 4, y nadie se pelea', 5: 'Comen 5: mesa larga' };
+const FRASES = { 1: 'Sos uno: sobra para mañana', 2: 'Para dos, y sobra', 3: 'Comen 3, lo dice la carta', 4: 'Comen 4, y nadie se pelea', 5: 'Comen 5: mesa larga' };
 const QUE = n => n <= 3 ? 2 : n === 4 ? 3 : 4;
 const MAX = 5;
 const $p = n => '$' + n.toLocaleString('es-AR');

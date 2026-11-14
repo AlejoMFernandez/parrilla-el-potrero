@@ -136,7 +136,7 @@
   "categorias": [
    {
     "id": "parrilladas",
-    "nombre": "Parrilladas para compartir"
+    "nombre": "Parrilladas"
    },
    {
     "id": "achuras",
@@ -148,7 +148,7 @@
    },
    {
     "id": "pollo",
-    "nombre": "Pollo de granja"
+    "nombre": "Pollo"
    },
    {
     "id": "milanesas",
