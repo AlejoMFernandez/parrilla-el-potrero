@@ -1,0 +1,549 @@
+{
+ "$schema": "https://raw.githubusercontent.com/AlejoMFernandez/kit-demos/main/docs/cliente.schema.json",
+ "id": "parrilla-el-potrero",
+ "nombre": "El Potrero",
+ "pais": "AR",
+ "idioma": "es",
+ "modo": "demo",
+ "whatsapp": "541145014400",
+ "instagram": "bodegonparrillaelpotrero",
+ "prefijoPedido": "EP",
+ "supabase": {
+  "url": "",
+  "anonKey": ""
+ },
+ "marca": {
+  "logo": "img/logo.svg",
+  "logoPanel": "img/logo-claro.svg",
+  "logoClaro": "img/logo-claro.svg",
+  "isotipo": "img/isotipo.svg",
+  "favicon": "img/favicon.png",
+  "colores": {
+   "fondo": "#F3EADB",
+   "superficie": "#FFFBF3",
+   "texto": "#14100C",
+   "primario": "#B23A26",
+   "acento": "#E8742A",
+   "borde": "#E0D2BC"
+  },
+  "fuentes": {
+   "titulos": "'Big Shoulders', Impact, sans-serif",
+   "texto": "'DM Sans', system-ui, sans-serif",
+   "googleFonts": ""
+  },
+  "estilo": {
+   "forma": "recta",
+   "sombra": "suave",
+   "borde": "1.5px",
+   "mayusculas": true
+  }
+ },
+ "modulos": {
+  "carta": true,
+  "carrito": true,
+  "reservas": true,
+  "admin": true,
+  "cartaQR": true
+ },
+ "horarios": {
+  "lun": [
+   [
+    "19:00",
+    "00:00"
+   ]
+  ],
+  "mar": [
+   [
+    "19:00",
+    "00:00"
+   ]
+  ],
+  "mie": [
+   [
+    "19:00",
+    "00:00"
+   ]
+  ],
+  "jue": [
+   [
+    "19:00",
+    "00:00"
+   ]
+  ],
+  "vie": [
+   [
+    "19:00",
+    "00:00"
+   ]
+  ],
+  "sab": [
+   [
+    "12:00",
+    "16:30"
+   ],
+   [
+    "19:00",
+    "00:00"
+   ]
+  ],
+  "dom": [
+   [
+    "12:00",
+    "16:30"
+   ],
+   [
+    "19:00",
+    "00:00"
+   ]
+  ]
+ },
+ "reservas": {
+  "intervaloMin": 30,
+  "duracionMin": 90,
+  "capacidad": 40,
+  "maxPersonas": 12,
+  "anticipacionMin": 60,
+  "diasAdelante": 21,
+  "ultimoTurnoMin": 60,
+  "cerrados": []
+ },
+ "pedidos": {
+  "salidas": [
+   "whatsapp",
+   "mercadopago"
+  ],
+  "tipos": [
+   "retiro",
+   "delivery"
+  ],
+  "envio": 0,
+  "minimo": 0
+ },
+ "pagos": {
+  "mercadopago": {
+   "endpoint": "https://kit-demos-amf.vercel.app/api/mp-preference",
+   "modo": "sandbox"
+  }
+ },
+ "textos": {
+  "tuPedido": "Tu comanda",
+  "verPedido": "Ver comanda",
+  "carritoVacio": "Tu comanda está vacía.",
+  "carritoVacioSub": "Sumá una parrillada o lo que quieras de la carta.",
+  "enviarPedido": "Mandar la comanda"
+ },
+ "carta": {
+  "categorias": [
+   {
+    "id": "parrilladas",
+    "nombre": "Parrilladas para compartir"
+   },
+   {
+    "id": "achuras",
+    "nombre": "Achuras"
+   },
+   {
+    "id": "cortes",
+    "nombre": "Cortes"
+   },
+   {
+    "id": "pollo",
+    "nombre": "Pollo de granja"
+   },
+   {
+    "id": "milanesas",
+    "nombre": "Milanesas"
+   },
+   {
+    "id": "supremas",
+    "nombre": "Supremas"
+   },
+   {
+    "id": "cocina",
+    "nombre": "De la cocina"
+   },
+   {
+    "id": "pastas",
+    "nombre": "Pastas caseras"
+   },
+   {
+    "id": "guarniciones",
+    "nombre": "Guarniciones y ensaladas"
+   },
+   {
+    "id": "postres",
+    "nombre": "Postres"
+   }
+  ],
+  "productos": [
+   {
+    "id": "parrillada-2",
+    "categoria": "parrilladas",
+    "nombre": "Parrillada para 2",
+    "precio": 59990,
+    "descripcion": "Comen 3. Chorizo, morcilla, chinchulín, riñón, pollo, asado y bondiola + fritas o ensalada mixta.",
+    "foto": "img/c-parrillada.webp",
+    "etiquetas": [
+     "casa"
+    ]
+   },
+   {
+    "id": "parrillada-3",
+    "categoria": "parrilladas",
+    "nombre": "Parrillada para 3",
+    "precio": 79990,
+    "descripcion": "Comen 4. Los mismos 7 cortes + fritas y ensalada mixta.",
+    "foto": "img/c-parrillada3.webp"
+   },
+   {
+    "id": "parrillada-4",
+    "categoria": "parrilladas",
+    "nombre": "Parrillada para 4",
+    "precio": 99990,
+    "descripcion": "Comen 5. Los mismos 7 cortes + fritas y ensalada mixta.",
+    "foto": "img/c-parrillada4.webp"
+   },
+   {
+    "id": "promo-matambres",
+    "categoria": "parrilladas",
+    "nombre": "Promo 2 matambres a la pizza",
+    "precio": 58990,
+    "descripcion": "Para compartir, con fritas."
+   },
+   {
+    "id": "promo-napos",
+    "categoria": "parrilladas",
+    "nombre": "Promo 2 milanesas napolitanas",
+    "precio": 37990,
+    "descripcion": "Para compartir, con fritas.",
+    "foto": "img/c-napo.webp"
+   },
+   {
+    "id": "chorizo",
+    "categoria": "achuras",
+    "nombre": "Chorizo puro cerdo",
+    "precio": 7990,
+    "descripcion": "100 % cerdo.",
+    "foto": "img/c-chorizo.webp"
+   },
+   {
+    "id": "morcilla",
+    "categoria": "achuras",
+    "nombre": "Morcilla",
+    "precio": 6990,
+    "descripcion": "Morcilla vacuna.",
+    "foto": "img/c-morcilla.webp"
+   },
+   {
+    "id": "chinchulin",
+    "categoria": "achuras",
+    "nombre": "Chinchulines (porción)",
+    "precio": 17990,
+    "descripcion": "Para compartir.",
+    "foto": "img/c-chinchu.webp"
+   },
+   {
+    "id": "rinon",
+    "categoria": "achuras",
+    "nombre": "Riñón (porción)",
+    "precio": 17990,
+    "descripcion": "Para compartir."
+   },
+   {
+    "id": "matambre",
+    "categoria": "cortes",
+    "nombre": "Matambre tiernizado",
+    "precio": 22990,
+    "descripcion": "Vacuno, a la parrilla."
+   },
+   {
+    "id": "bondiola",
+    "categoria": "cortes",
+    "nombre": "Bondiola (porción)",
+    "precio": 22990,
+    "descripcion": "De cerdo, a la parrilla.",
+    "foto": "img/c-bondiola.webp"
+   },
+   {
+    "id": "mollejas",
+    "categoria": "achuras",
+    "nombre": "Mollejas",
+    "precio": 27990,
+    "descripcion": "Porción a la parrilla.",
+    "foto": "img/c-mollejas.webp"
+   },
+   {
+    "id": "asado",
+    "categoria": "cortes",
+    "nombre": "Asado banderita (porción)",
+    "precio": 27990,
+    "descripcion": "Tira de asado a la parrilla.",
+    "foto": "img/c-asado.webp"
+   },
+   {
+    "id": "bife",
+    "categoria": "cortes",
+    "nombre": "Bife de chorizo",
+    "precio": 27990,
+    "descripcion": "600 g en crudo.",
+    "foto": "img/c-bife.webp"
+   },
+   {
+    "id": "vacio",
+    "categoria": "cortes",
+    "nombre": "Vacío (porción)",
+    "precio": 37990,
+    "descripcion": "A la parrilla.",
+    "foto": "img/c-vacio.webp"
+   },
+   {
+    "id": "pollo-entero",
+    "categoria": "pollo",
+    "nombre": "Pollo entero a la parrilla",
+    "precio": 34990,
+    "descripcion": "Pollo de Granja Las Camelias, sin hormonas.",
+    "foto": "img/c-pollo.webp"
+   },
+   {
+    "id": "pollo-entero-g",
+    "categoria": "pollo",
+    "nombre": "Pollo entero con guarnición",
+    "precio": 37990,
+    "descripcion": "Pollo de Granja Las Camelias, sin hormonas."
+   },
+   {
+    "id": "medio-pollo",
+    "categoria": "pollo",
+    "nombre": "Medio pollo a la parrilla",
+    "precio": 21990,
+    "descripcion": "Pollo de Granja Las Camelias, sin hormonas.",
+    "foto": "img/c-pollo2.webp"
+   },
+   {
+    "id": "medio-pollo-g",
+    "categoria": "pollo",
+    "nombre": "Medio pollo con guarnición",
+    "precio": 24990,
+    "descripcion": "Pollo de Granja Las Camelias, sin hormonas."
+   },
+   {
+    "id": "cuarto-pechuga",
+    "categoria": "pollo",
+    "nombre": "1/4 de pollo pechuga",
+    "precio": 14990,
+    "descripcion": "Pollo de Granja Las Camelias, sin hormonas."
+   },
+   {
+    "id": "pechuga-grille",
+    "categoria": "pollo",
+    "nombre": "Pechuga grillé",
+    "precio": 15990,
+    "descripcion": "Pollo de Granja Las Camelias, sin hormonas."
+   },
+   {
+    "id": "pata-muslo",
+    "categoria": "pollo",
+    "nombre": "Pata y muslo con fritas",
+    "precio": 14990,
+    "descripcion": "Pollo de Granja Las Camelias, sin hormonas."
+   },
+   {
+    "id": "mila",
+    "categoria": "milanesas",
+    "nombre": "Milanesa sola",
+    "precio": 16500,
+    "descripcion": "De ternera.",
+    "foto": "img/c-mila.webp"
+   },
+   {
+    "id": "mila-fritas",
+    "categoria": "milanesas",
+    "nombre": "Milanesa con fritas",
+    "precio": 18500,
+    "descripcion": "De ternera."
+   },
+   {
+    "id": "mila-pure",
+    "categoria": "milanesas",
+    "nombre": "Milanesa con puré",
+    "precio": 19000,
+    "descripcion": "De ternera."
+   },
+   {
+    "id": "mila-caballo",
+    "categoria": "milanesas",
+    "nombre": "Milanesa a caballo con fritas",
+    "precio": 20500,
+    "descripcion": "Con 2 huevos fritos.",
+    "foto": "img/c-caballo.webp"
+   },
+   {
+    "id": "mila-napo",
+    "categoria": "milanesas",
+    "nombre": "Milanesa napolitana sola",
+    "precio": 18900,
+    "descripcion": "La mejor napolitana.",
+    "foto": "img/c-napo.webp",
+    "etiquetas": [
+     "casa"
+    ]
+   },
+   {
+    "id": "mila-napo-fritas",
+    "categoria": "milanesas",
+    "nombre": "Milanesa napolitana con fritas",
+    "precio": 20900,
+    "descripcion": "De ternera."
+   },
+   {
+    "id": "suprema",
+    "categoria": "supremas",
+    "nombre": "Suprema sola",
+    "precio": 16500,
+    "foto": "img/c-suprema.webp"
+   },
+   {
+    "id": "suprema-fritas",
+    "categoria": "supremas",
+    "nombre": "Suprema con fritas",
+    "precio": 18500
+   },
+   {
+    "id": "suprema-napo",
+    "categoria": "supremas",
+    "nombre": "Suprema napolitana sola",
+    "precio": 18900
+   },
+   {
+    "id": "suprema-napo-fritas",
+    "categoria": "supremas",
+    "nombre": "Suprema napolitana con fritas",
+    "precio": 20900
+   },
+   {
+    "id": "suprema-napo-pure",
+    "categoria": "supremas",
+    "nombre": "Suprema napolitana con puré",
+    "precio": 21500
+   },
+   {
+    "id": "tortilla",
+    "categoria": "cocina",
+    "nombre": "Tortilla de papa a la española",
+    "precio": 17990,
+    "descripcion": "Grande, de 800 g, con chorizo colorado.",
+    "foto": "img/c-tortilla.webp",
+    "etiquetas": [
+     "casa"
+    ]
+   },
+   {
+    "id": "provoleta",
+    "categoria": "cocina",
+    "nombre": "Provoleta al oreganato",
+    "precio": 15900,
+    "descripcion": "A la parrilla con tomate, oliva y orégano.",
+    "foto": "img/c-provoleta.webp"
+   },
+   {
+    "id": "morron",
+    "categoria": "cocina",
+    "nombre": "Morrón a la parrilla con oliva",
+    "precio": 7990
+   },
+   {
+    "id": "sand-vacio",
+    "categoria": "cocina",
+    "nombre": "Sándwich de vacío con fritas",
+    "precio": 13490
+   },
+   {
+    "id": "sand-bondiola",
+    "categoria": "cocina",
+    "nombre": "Sándwich de bondiola con fritas",
+    "precio": 13490,
+    "foto": "img/c-choripan.webp"
+   },
+   {
+    "id": "ravioles",
+    "categoria": "pastas",
+    "nombre": "Ravioles de verdura y ricota con mixta",
+    "precio": 13990,
+    "descripcion": "Caseros.",
+    "foto": "img/c-ravioles.webp"
+   },
+   {
+    "id": "sorrentinos-jyq",
+    "categoria": "pastas",
+    "nombre": "Sorrentinos de jamón y muzza",
+    "precio": 10990,
+    "descripcion": "Caseros.",
+    "foto": "img/c-sorrentinos.webp"
+   },
+   {
+    "id": "sorrentinos-calabaza",
+    "categoria": "pastas",
+    "nombre": "Sorrentinos de calabaza y muzza con mixta",
+    "precio": null,
+    "descripcion": "Caseros."
+   },
+   {
+    "id": "raviolones",
+    "categoria": "pastas",
+    "nombre": "Raviolones de pollo y verdura con mixta",
+    "precio": null,
+    "descripcion": "Caseros."
+   },
+   {
+    "id": "noquis",
+    "categoria": "pastas",
+    "nombre": "Ñoquis del 29 con bolognesa",
+    "precio": null,
+    "descripcion": "Todos los 29.",
+    "foto": "img/c-noquis.webp"
+   },
+   {
+    "id": "fritas-m",
+    "categoria": "guarniciones",
+    "nombre": "Papas fritas bastón medianas",
+    "precio": 10990
+   },
+   {
+    "id": "fritas-g",
+    "categoria": "guarniciones",
+    "nombre": "Papas fritas bastón grandes",
+    "precio": 12990
+   },
+   {
+    "id": "provenzal",
+    "categoria": "guarniciones",
+    "nombre": "Papas provenzal",
+    "precio": 11990,
+    "descripcion": "Ajo y perejil."
+   },
+   {
+    "id": "mixta",
+    "categoria": "guarniciones",
+    "nombre": "Ensalada mixta mediana",
+    "precio": 5990,
+    "descripcion": "Lechuga, tomate y cebolla."
+   },
+   {
+    "id": "rucula",
+    "categoria": "guarniciones",
+    "nombre": "Rúcula, ajo y parmesano",
+    "precio": 7990
+   },
+   {
+    "id": "tiramisu",
+    "categoria": "postres",
+    "nombre": "Tiramisú de la casa",
+    "precio": 6490,
+    "foto": "img/c-tiramisu.webp",
+    "etiquetas": [
+     "casa"
+    ]
+   }
+  ]
+ }
+}
